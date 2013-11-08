@@ -62,7 +62,7 @@
     
     deduce([audios, videos], function(list, i) {
         each(list, function(types, ext) {
-            var can = list[ext] = deduce(types, plays, i ? video : audio) || false;
+            var can = list[ext] = deduce(types, plays, i ? video : audio) || '';
             can && list['maybe' == can ? 'push' : 'unshift'](ext);
         });
     });
