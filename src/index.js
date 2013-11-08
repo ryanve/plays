@@ -8,7 +8,7 @@
       , video = 'video'
       , canPlayType = 'canPlayType'
       , no = /^no$/
-      , mime = /^(\w*)\/([\w-]*)$/i
+      , mime = /^(\w*)\/([\w.+-]*)$/
       , owns = 'hasOwnProperty'
       , create = 'createElement'
       , audios = plays[audio] = []
