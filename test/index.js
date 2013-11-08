@@ -19,4 +19,9 @@
     }) && aok(function() {
         return isArray(plays[this.id = 'video']);
     });
+    
+    aok({
+        id: 'types'
+      , test: '' === plays('audio/-') && typeof plays.audio.mp3 === 'string'
+    });
 }));

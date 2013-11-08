@@ -1,7 +1,7 @@
 {
     "name": "plays",
     "description": "HTML5 audio and video feature detects",
-    "version": "0.6.0",
+    "version": "0.7.0",
     "homepage": "https://github.com/ryanve/plays",
     "license": "MIT",
     "author": "Ryan Van Etten",

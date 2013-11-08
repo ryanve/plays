@@ -2,7 +2,7 @@
 
 #### HTML5 `<audio>` and `<video>` feature detects
 
-## API ([0.6](../../releases))
+## API ([0.7](../../releases))
 
 ### plays(type, elem?)
 
@@ -19,11 +19,11 @@ plays('mp3', 'audio') // => boolean
 ```js
 plays.audio[0] // => the most probable type
 plays.audio.length // => number of available types
-plays.audio.m4a // => "probably"|"maybe"|false
-plays.audio.mp3 // => "probably"|"maybe"|false
-plays.audio.wav // => "probably"|"maybe"|false
-plays.audio.ogg // => "probably"|"maybe"|false
-plays.audio.opus // => "probably"|"maybe"|false
+plays.audio.m4a // => "probably"|"maybe"|""
+plays.audio.mp3 // => "probably"|"maybe"|""
+plays.audio.wav // => "probably"|"maybe"|""
+plays.audio.ogg // => "probably"|"maybe"|""
+plays.audio.opus // => "probably"|"maybe"|""
 ```
 
 #### plays.video &rArr; array
@@ -31,9 +31,9 @@ plays.audio.opus // => "probably"|"maybe"|false
 ```js
 plays.video[0] // => the most probable type
 plays.video.length // => number of available types
-plays.video.ogg // => "probably"|"maybe"|false
-plays.video.mp4 // => "probably"|"maybe"|false
-plays.video.webm // => "probably"|"maybe"|false
+plays.video.ogg // => "probably"|"maybe"|""
+plays.video.mp4 // => "probably"|"maybe"|""
+plays.video.webm // => "probably"|"maybe"|""
 ```
 
 ## License: [MIT](http://opensource.org/licenses/MIT)
