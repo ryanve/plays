@@ -6,10 +6,11 @@
     var doc = document
       , audio = 'audio'
       , video = 'video'
-      , owns = 'hasOwnProperty'
-      , mime = /^(\w*)\/([\w-]*)$/i
-      , create = 'createElement'
       , canPlayType = 'canPlayType'
+      , no = /^no$/
+      , mime = /^(\w*)\/([\w-]*)$/i
+      , owns = 'hasOwnProperty'
+      , create = 'createElement'
       , audios = plays[audio] = []
       , videos = plays[video] = []
       , format = function(mime, codec) {
@@ -32,21 +33,15 @@
      * @param {string} type
      * @param {(Element|string|number)=} e
      * @param {*=} scope
-     * @return {boolean|string}
+     * @return {string}
      * @example plays("audio/mp3")
      * @example plays("mp4", "video")
      * @example ["mp3", "wav"].some(plays, "audio")
      */    
     function plays(type, e) {
-        var can = false;
         e = typeof e == 'number' ? this.valueOf() : e || (type.match(mime) || [])[1];
         e = typeof e == 'string' ? doc[create](e) : e;
-        if (canPlayType in e) {
-            //if (codecs[owns](type)) return deduce(codecs[type], plays, e) || can;
-            can = e[canPlayType](type);
-            can = can && 'no' != can ? can : false;
-        }
-        return can;
+        return canPlayType in e ? e[canPlayType](type).replace(no, '') : '';
     }
 
     /**
